@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="ca.roumani.tab2.Tab2">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Annual Income"
+        android:id="@+id/income"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="From"
+        android:id="@+id/from"
+        android:textStyle="bold|italic"
+        android:layout_alignBaseline="@+id/fromBox"
+        android:layout_alignBottom="@+id/fromBox"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="-2dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fromBox"
+        android:layout_below="@+id/income"
+        android:layout_toRightOf="@+id/from"
+        android:layout_marginTop="-2dp"
+        android:inputType="number"
+        android:width="100dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To"
+        android:id="@+id/to"
+        android:textStyle="bold|italic"
+        android:layout_alignBottom="@+id/from"
+        android:layout_toRightOf="@+id/fromBox"
+        android:layout_toEndOf="@+id/fromBox"
+        android:layout_marginTop="-2dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/toBox"
+        android:layout_alignBottom="@+id/fromBox"
+        android:layout_toRightOf="@+id/to"
+        android:width="100dp"
+        android:inputType="number"
+        android:layout_marginTop="-2dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inc"
+        android:id="@+id/inc"
+        android:textStyle="bold|italic"
+        android:layout_alignTop="@+id/to"
+        android:layout_toRightOf="@+id/toBox"
+        android:layout_toEndOf="@+id/toBox"
+        android:layout_marginTop="-2dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/incBox"
+        android:width="80dp"
+        android:inputType="number"
+        android:layout_alignTop="@+id/toBox"
+        android:layout_toRightOf="@+id/inc"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-2dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tabulate"
+        android:id="@+id/tabulate"
+        android:layout_below="@+id/fromBox"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="buttonClicked" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_below="@+id/tabulate"
+        android:layout_centerHorizontal="true"
+        android:fillViewport="false" >
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/tableLayout"
+            android:orientation="vertical"
+            android:stretchColumns="*"></TableLayout>
+    </ScrollView>
+
+</RelativeLayout>
